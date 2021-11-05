@@ -1,11 +1,14 @@
 import base64, requests, os, sys
 
-API_ENDPOINT = 'https://discord.com/api/v8'
+API_ENDPOINT = 'https://discord.com/api/v9'
 TOKEN = sys.argv[1]
-CLIENT_ID = '906164022309703680'
+CLIENT_ID = '906197927968526358'
 
 def get_assets():
-    r = requests.get('%s/oauth2/applications/%s/assets' % (API_ENDPOINT, CLIENT_ID), headers={'Authorization': '%s' % TOKEN})
+    url = '%s/oauth2/applications/%s/assets' % (API_ENDPOINT, CLIENT_ID)
+    headers={'Authorization': '%s' % TOKEN}
+    r = requests.get(url=url, headers=headers)
+#    r = requests.get('%s/oauth2/applications/%s/assets' % (API_ENDPOINT, CLIENT_ID), headers={'Authorization': '%s' % TOKEN})
     r.raise_for_status()
     return r.json()
 
