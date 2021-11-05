@@ -23,8 +23,13 @@ def get_game(titleID: str, search_term: str):
             return None, None
 
     all_games = data['data']['universalSearch']['results']
+    searched_game = next((item for item in all_games if titleID in item["id"].lower()), None)
 
-    searched_game = next(item for item in all_games if titleID in item["id"].lower())
+    # if we didnt find the specific game we just want to use the first one which is generally the right one
+    # from this we get the picture but use the other one
+    if searched_game is None:
+        searched_game = all_games[0]
+
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
 
@@ -49,7 +54,7 @@ def get_game_with_url(titleID: str, search_term: str):
 
     all_games = data['data']['universalSearch']['results']
 
-    searched_game = next(item for item in all_games if titleID in item["id"].lower())
+    searched_game = next((item for item in all_games if titleID in item["id"].lower()), None)
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
 
@@ -72,7 +77,7 @@ def get_game_picture_url(titleID: str, search_term: str):
 
     all_games = data['data']['universalSearch']['results']
 
-    searched_game = next(item for item in all_games if titleID in item["id"].lower())
+    searched_game = next((item for item in all_games if titleID in item["id"].lower()), None)
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
 
@@ -95,7 +100,7 @@ def get_game_picture_data(titleID: str, search_term: str):
 
     all_games =  data['data']['universalSearch']['results']
 
-    searched_game = next(item for item in all_games if titleID in item["id"].lower())
+    searched_game = next((item for item in all_games if titleID in item["id"].lower()), None)
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
     pic_dl = http.request('GET', url=picture['url'])
