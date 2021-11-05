@@ -23,11 +23,11 @@ jobs:
     - name: Upload PS Assets to Discord
       run: |
         python github_update_readme.py ${{ secrets.DC_TOKEN }}
-        echo "UPDATE_C=$(if [[ $(git status -s README.md) ]]; then echo "1"; else echo "0"; fi)" >> $GITHUB_ENV
+        echo "UPDATE_C=$(if [[ $(git status -s README.md) ]]; then echo 1; else echo 0; fi)" >> $GITHUB_ENV
     - name: Display Changes
       run: echo $UPDATE_C
     - name: Commit README.md
-      if: UPATE_C='1'
+      if: UPDATE_C==1
       run: |
         git config --global user.name "README Updater"
         git config --global user.email "37000563+flok@users.noreply.github.com"
