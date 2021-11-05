@@ -6,7 +6,7 @@ API_SEARCH = 'https://web.np.playstation.com/api/graphql/v1//op?operationName=ge
 
 def get_game(titleID: str, search_term: str):
     url = r'https://web.np.playstation.com/api/graphql/v1//op?operationName=getSearchResults&variables={"countryCode":"US","languageCode":"en","searchTerm":"%s"}&extensions={"persistedQuery":{"version":1,"sha256Hash":"d77d9a513595db8d75fc26019f01066d54c8d0de035a77a559bd687fa1010418"}}' % search_term
-    print(url)
+
     r = requests.get(url=url)
     if "message" in r.json().values():
         if r.json()['message'] == "Query not whitelisted":
@@ -19,13 +19,14 @@ def get_game(titleID: str, search_term: str):
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
 
-    pic_dl = requests.get(url=picture['url']).content
+    pic_dl = requests.get(url=picture['url'])
+    pic_dl.raise_for_status()
 
-    return searched_game, pic_dl
+    return searched_game, pic_dl.content
 
 def get_game_picture_url(titleID: str, search_term: str):
     url = r'https://web.np.playstation.com/api/graphql/v1//op?operationName=getSearchResults&variables={"countryCode":"US","languageCode":"en","searchTerm":"%s"}&extensions={"persistedQuery":{"version":1,"sha256Hash":"d77d9a513595db8d75fc26019f01066d54c8d0de035a77a559bd687fa1010418"}}' % search_term
-    print(url)
+
     r = requests.get(url=url)
     if "message" in r.json().values():
         if r.json()['message'] == "Query not whitelisted":
@@ -54,5 +55,7 @@ def get_game_picture_data(titleID: str, search_term: str):
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
 
-    pic_dl = requests.get(url=picture['url']).content
-    return pic_dl
+    pic_dl = requests.get(url=picture['url'])
+    pic_dl.raise_for_status()
+
+    return pic_dl.content
