@@ -21,6 +21,7 @@ for game in supported_games:
 
     picture_encoded = base64.b64encode(picture)
 
-    add_asset(titleID, 'data:image/png;base64,%s' % picture_encoded.decode('utf-8'))
+    status_asset = add_asset(titleID, 'data:image/png;base64,%s' % picture_encoded.decode('utf-8'))
 
+    print(f"Status Asset {status_asset}")
     print(f"Added Game {game_info['npTitleId']} with Name : {game_info['name']}")
