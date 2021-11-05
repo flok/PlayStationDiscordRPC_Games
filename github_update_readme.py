@@ -24,6 +24,9 @@ for game in supported_games:
         continue
 
     game, url = get_game_with_url(titleID=title, search_term=search_term)
+    if game is None or url is None:
+        continue
+    
     table.append(f"| ![Alt Text]({url}) | {game['name']} |")
 
 
