@@ -32,6 +32,7 @@ def get_game_with_url(titleID: str, search_term: str):
 
     r = requests.get(url=url)
     print(f"Status Code : {r.status_code}")
+    print(f"Json : {r.json()}")
 
     if r.json() is None:
         return None, None
