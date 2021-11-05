@@ -32,5 +32,8 @@ jobs:
         then
           git commit -m "Update README.md with new supported games"
           git push
-        fi;
+        else
+          echo "No Changes to commit"
+          exit 0
+        fi
         
