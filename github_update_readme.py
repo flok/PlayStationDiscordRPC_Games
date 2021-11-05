@@ -28,5 +28,4 @@ for game in supported_games:
 
 readme = open('README_template.md', 'r').read()
 readme = readme.replace('*games*', '\n'.join(table))
-
-open('test.md', 'w').write(readme)
+open('README.md', 'w').write(readme)
