@@ -24,7 +24,7 @@ jobs:
       run: |
         python github_update_readme.py ${{ secrets.DC_TOKEN }}
     - name: Commit README.md
-      if: git status -s README.md == " M README.md"
+      if: $(git status -s README.md) == " M README.md"
       run: |
         git config --global user.name "README Updater"
         git config --global user.email "37000563+flok@users.noreply.github.com"
