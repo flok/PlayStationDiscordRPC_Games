@@ -27,7 +27,7 @@ def get_game(titleID: str, search_term: str):
 
 def get_game_with_url(titleID: str, search_term: str):
     url = r'https://web.np.playstation.com/api/graphql/v1//op?operationName=getSearchResults&variables={"countryCode":"US","languageCode":"en","searchTerm":"%s"}&extensions={"persistedQuery":{"version":1,"sha256Hash":"d77d9a513595db8d75fc26019f01066d54c8d0de035a77a559bd687fa1010418"}}' % search_term
-
+    print(url)
     r = requests.get(url=url)
     r.raise_for_status()
     if "message" in r.json().values():
