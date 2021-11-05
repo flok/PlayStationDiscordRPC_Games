@@ -5,6 +5,9 @@ from discord_assets import get_assets
 from playstation_api import get_game_with_url
 import yaml
 
+# parse DC token to global variable
+TOKEN = sys.argv[1]
+
 # get current assets
 registered_games = [game['name'] for game in get_assets()]
 supported_games = yaml.load(open('supported_games.yaml'), Loader=yaml.FullLoader)
