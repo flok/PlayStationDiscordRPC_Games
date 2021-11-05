@@ -30,6 +30,7 @@ def get_game_with_url(titleID: str, search_term: str):
 
     url = r'https://web.np.playstation.com/api/graphql/v1//op?operationName=getSearchResults&variables={"countryCode":"US","languageCode":"en","searchTerm":"%s"}&extensions={"persistedQuery":{"version":1,"sha256Hash":"d77d9a513595db8d75fc26019f01066d54c8d0de035a77a559bd687fa1010418"}}' % search_term
     print(f"URL: {url}")
+    print(f"URL repr {url.__repr__()}")
     r = requests.get(url=url)
     print(f"Status Code : {r.status_code}")
     print(f"Json : {r.json()}")
