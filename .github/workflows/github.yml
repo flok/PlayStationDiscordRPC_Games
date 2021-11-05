@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests pyyaml
+        pip install requests pyyaml pytablewriter
     - name: Upload PS Assets to Discord
       run: |
         python github_update_readme.py ${{ secrets.DC_TOKEN }}
