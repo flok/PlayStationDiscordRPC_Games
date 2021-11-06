@@ -1,13 +1,10 @@
 # PlayStationDiscordRPC_Games
-Supported PS5 games used by PlayStationDiscordRPC
-
-# PlayStationDiscordRPC_Games
-Supported PS5 games used by PlayStationDiscordRPC 
-
+Supported PS5 games used by [PlayStationDiscordRPC](https://github.com/flok/PlayStationDiscordRPC)
 
 ## Support new game
 
-The tool automatically downloads the asset the wanted game if the right titleID and search term is defined. The search should be the exact name thats is displayed on the RPC inside discord.
+The tool automatically downloads the asset of the wanted game if the right titleID and search term is defined. With the seach term you should be able to find the game on [PlayStation Store](https://store.playstation.com/en-us/pages/latest) at the top right corner.
+
 To support a new game simply add the game to the `supported_games.yaml` file like this:
 
 From this:
@@ -35,7 +32,7 @@ to this:
 
 ```
 
-If i merge the changes the game will be automatically added to the discord application and should available a short time after that.
+If I merge the changes the game will be automatically added to the Discord application and should available a short time after that. A restart of [PlayStationDiscordRPC](https://github.com/flok/PlayStationDiscordRPC) maybe necessary to see the image inside Discord.
 
 ## Supported Games
 
