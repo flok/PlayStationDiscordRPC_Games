@@ -32,7 +32,7 @@ to this:
 
 ```
 
-If i merge the changes the game will be automatically added to the discord application and should available a short time after that.
+If I merge the changes the game will be automatically added to the Discord application and should available a short time after that. A restart of [PlayStationDiscordRPC](https://github.com/flok/PlayStationDiscordRPC) maybe necessary to see the image inside Discord.
 
 ## Supported Games
 
