@@ -36,10 +36,10 @@ If I merge the changes the game will be automatically added to the Discord appli
 
 ## Supported Games
 
-|                                                                              Icon                                                                               |  TitleID   |                    Name                    |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|--------------------------------------------|
-|<img src="https://image.api.playstation.com/vulcan/ap/rnd/202010/2012/T3h5aafdjR8k7GJAG82832De.png">                                                             |PPSA01325_00|ASTRO's PLAYROOM                            |
-|<img src="https://image.api.playstation.com/vulcan/ap/rnd/202008/1020/T45iRN1bhiWcJUzST6UFGBvO.png">                                                             |PPSA01411_00|Marvel's Spider-Man: Miles Morales PS4 & PS5|
-|<img src="https://image.api.playstation.com/vulcan/img/rnd/202010/1908/35Fq1N8ZBaOsh2odxMBGvjUj.png">                                                            |CUSA16283_00|F1 2020                                     |
-|<img src="https://image.api.playstation.com/vulcan/img/cfn/113074GEdk9gaenX1acpmB46steL7T1-9OSg7shV22ZGxbgscVEntiRV0jQsIbYTUcz6i6MbM-dJd_wobmSi6KEqbowyDj6u.png">|PPSA01468_00|Spider Solitaire F                          |
+|                                                Icon                                                 |  TitleID   |                    Name                     |
+|-----------------------------------------------------------------------------------------------------|------------|---------------------------------------------|
+|<img src="https://image.api.playstation.com/vulcan/ap/rnd/202010/2012/T3h5aafdjR8k7GJAG82832De.png"> |PPSA01325_00|ASTRO's PLAYROOM                             |
+|<img src="https://image.api.playstation.com/vulcan/ap/rnd/202008/1020/T45iRN1bhiWcJUzST6UFGBvO.png"> |PPSA01411_00|Marvel's Spider-Man: Miles Morales PS4 & PS5 |
+|<img src="https://image.api.playstation.com/vulcan/img/rnd/202010/1908/35Fq1N8ZBaOsh2odxMBGvjUj.png">|CUSA16283_00|F1 2020                                      |
+|<img src="https://image.api.playstation.com/vulcan/img/rnd/202011/0714/vuF88yWPSnDfmFJVTyNJpVwW.png">|PPSA01468_00|Marvel's Spider-Man: Game of the Year Edition|
 
