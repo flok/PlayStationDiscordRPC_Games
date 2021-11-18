@@ -25,10 +25,8 @@ def get_game(titleID: str, search_term: str):
     all_games = data['data']['universalSearch']['results']
     searched_game = next((item for item in all_games if titleID in item["id"].lower()), None)
 
-    # if we didnt find the specific game we just want to use the first one which is generally the right one
-    # from this we get the picture but use the other one
     if searched_game is None:
-        searched_game = all_games[0]
+        return None, None
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
 
@@ -55,10 +53,8 @@ def get_game_with_url(titleID: str, search_term: str):
 
     searched_game = next((item for item in all_games if titleID in item["id"].lower()), None)
 
-    # if we didnt find the specific game we just want to use the first one which is generally the right one
-    # from this we get the picture but use the other one
     if searched_game is None:
-        searched_game = all_games[0]
+        return None, None
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
 
@@ -72,7 +68,7 @@ def get_game_picture_url(titleID: str, search_term: str):
     data = json.loads(r.data.decode('utf-8'))
 
     if data is None:
-        return None, None
+        return None
 
     if "message" in data.values():
         if data['message'] == "Query not whitelisted":
@@ -83,10 +79,8 @@ def get_game_picture_url(titleID: str, search_term: str):
 
     searched_game = next((item for item in all_games if titleID in item["id"].lower()), None)
 
-    # if we didnt find the specific game we just want to use the first one which is generally the right one
-    # from this we get the picture but use the other one
     if searched_game is None:
-        searched_game = all_games[0]
+        return None
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
 
@@ -105,16 +99,14 @@ def get_game_picture_data(titleID: str, search_term: str):
     if "message" in data.values():
         if data['message'] == "Query not whitelisted":
             print("query whitelist error")
-            return None, None
+            return None
 
     all_games =  data['data']['universalSearch']['results']
 
     searched_game = next((item for item in all_games if titleID in item["id"].lower()), None)
 
-    # if we didnt find the specific game we just want to use the first one which is generally the right one
-    # from this we get the picture but use the other one
     if searched_game is None:
-        searched_game = all_games[0]
+        return None
 
     picture = next(item for item in searched_game['media'] if item["role"] == "MASTER")
     pic_dl = http.request('GET', url=picture['url'])

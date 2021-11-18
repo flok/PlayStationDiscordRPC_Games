@@ -19,6 +19,9 @@ for game in supported_games:
 
     game_info, picture = get_game(titleID ,search_term)
 
+    if game_info is None or picture is None:
+        continue
+
     picture_encoded = base64.b64encode(picture)
 
     status_asset = add_asset(titleID, 'data:image/png;base64,%s' % picture_encoded.decode('utf-8'))
